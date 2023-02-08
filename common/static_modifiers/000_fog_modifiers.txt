@@ -46,15 +46,27 @@ inspectorate = {
 ### Rhindie tradables
 
 rhin_oversight = {
-
+	planet_stability_add = 10
+	planet_administrators_upkeep_mult = -0.3
+	pop_job_amenities_mult = -0.1
+	ship_weapon_damage = -0.2
+	army_damage_mult = -0.2
 }
 
 rhin_scrutiny = {
-
+	intel_encryption_add = -2
+	planet_administrators_upkeep_mult = 0.3
+	pop_citizen_happiness = -0.1
 }
 
 rhin_emergency = {
-
+	planet_crime_mult = -0.4
+	planet_crime_no_happiness_mult = -0.4
+	planet_jobs_produces_mult = 0.3
+	ship_weapon_damage = 0.2
+	army_damage_mult = 0.2
+	job_soldier_stability_add = 5
+	pop_job_amenities_mult = -0.3
 }
 
 ### Courtier barterables
@@ -92,35 +104,44 @@ court_very_talky = {
 	monthly_loyalty = 0.5
 }
 
+court_bartery = {
+	trade_value_mult = 0.1
+}
+
+court_very_bartery = {
+	trade_value_mult = 0.2
+	monthly_loyalty = 0.5
+}
+
 ### Inspector detectors
 
-ship_printer_go_brr = {
+GI_show_force = {
 	starbase_shipyard_build_speed_mult = 2
 	starbase_shipyard_build_cost_mult = -0.1
 	ships_alloys_upkeep_mult = -0.6
 	country_alloys_produces_mult = -0.9
 }
 
-rights_doko = {
+GI_no_priv = {
 	planet_metallurgists_alloys_produces_add = 1
 	planet_metallurgists_minerals_upkeep_add = 2
 	planet_miners_minerals_produces_add = 2
 	pop_job_amenities_mult = -0.2
 }
 
-put_the_workers_in_the_ship = {
+GI_sacrifice = {
 	ship_weapon_damage = 0.2
 	ship_fire_rate_mult = 0.1
 	ship_speed_mult = 0.15
 	country_produces_mult = -0.3
 }
 
-no_rights_only_guns = {
+GI_militia = {
 	pop_defense_armies_add = 1
-	country_occupation_armies_add = 5
-	army_morale = -0.2
-	army_health = 0.2
-	army_damage_mult = 0.2
+	country_occupation_armies_add = 3
+	army_morale = -0.1
+	army_health = 0.1
+	army_damage_mult = 0.1
 	pop_job_amenities_mult = -0.1
 	planet_stability_add = 10
 }
