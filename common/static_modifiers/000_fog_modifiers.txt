@@ -51,7 +51,7 @@ inspectorate = {
 	country_upkeep_mult = -0.4
 	ship_armor_hardening_add = -0.2  # Why my
 	ship_shield_hardening_add = -0.2 # ship-ship soft?
-	starbase_shipyard_build_speed_mult = 0.5
+	starbase_shipyard_build_speed_mult = 1
 }
 
 ### Rhindie tradables
@@ -102,3 +102,35 @@ court_very_talky = {
 
 ### Inspector detectors
 
+ship_printer_go_brr = {
+	starbase_shipyard_build_speed_mult = 2
+	starbase_shipyard_build_cost_mult = -0.1
+	ships_alloys_upkeep_mult = -0.6
+	country_alloys_produces_mult = -0.9
+}
+
+rights_doko = {
+	planet_metallurgists_alloys_produces_add = 2
+	planet_metallurgists_minerals_upkeep_add = 4
+	planet_miners_minerals_produces_add = 2
+	pop_job_amenities_mult = -0.2
+}
+
+put_the_workers_in_the_ship = {
+	ship_weapon_damage = 0.2
+	ship_fire_rate_mult = 0.2
+	ship_speed_mult = 0.25
+	ship_armor_hardening_add = 0.25
+	ship_shield_hardening_add = 0.25
+	country_produces_mult = -0.5
+}
+
+no_rights_only_guns = {
+	pop_defense_armies_add = 1
+	country_occupation_armies_add = 5
+	army_morale = -0.2
+	army_health = 0.2
+	army_damage_mult = 0.3
+	pop_job_amenities_mult = -0.1
+	planet_stability_add = 10
+}
