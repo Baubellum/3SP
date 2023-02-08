@@ -53,3 +53,16 @@ inspectorate = {
 	shipsize_corvette_hull_add = -350
 	shipsize_corvette_build_speed_mult = 2
 }
+
+### Rhindie tradables
+
+mil_oversight = {
+
+}
+
+### Courtier barterables
+
+
+
+### Inspector detectors
+
