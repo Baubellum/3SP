@@ -1,0 +1,64 @@
+trait_indomitable = {
+	cost = 0
+	potential_crossbreeding_chance = 0	# 1.0 = 100% chance of being considered for new traits when forming half-species. does not guarantee the trait will be added if it costs points.
+	allowed_archetypes = { BIOLOGICAL }
+	allowed_origins = { origin_necrophage }
+	valid_for_all_origins = no
+	randomized = no
+	species_potential_add = {
+		exists = from
+		from = { has_origin = origin_necrophage }
+	}
+	species_possible_remove = {
+		always = yes
+	}
+	species_possible_merge_remove = {
+		always = yes
+	}
+	custom_tooltip_with_modifiers = trait_indomitable_tooltip
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_necrophage }
+			is_being_purged = yes
+		}
+		planet_jobs_produces_mult = -3
+		pop_purge_speed = -0.5
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			is_being_purged = yes
+		}
+		pop_political_power = 1
+		planet_jobs_produces_mult = -3
+		pop_purge_speed = -0.5
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_crisis_level = crisis_level_1 }
+			is_being_purged = yes
+		}
+		planet_jobs_produces_mult = -3
+		pop_purge_speed = -2.5
+	}
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_origin = origin_necrophage }
+			owner = { has_crisis_level = crisis_level_1 }
+			is_being_purged = yes
+		}
+		
+		planet_jobs_produces_mult = -3
+		pop_purge_speed = -2.5
+	}
+	modifier = {
+		pop_cat_purge_political_power = 1.0
+		pop_environment_tolerance = 0.4
+	}
+	slave_cost = {
+		energy = 1000
+	}
+}

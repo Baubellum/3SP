@@ -1,0 +1,393 @@
+# These actions can be traded in trade deals to provide the empires with modifiers or other sorts of effects.
+#
+# Example:
+#
+# trade_action_my_example_action = {
+# 	# If this is set to 'yes', then the action will be fired and then removed from the trade deal.
+# 	# If 'no', then the trade deal will be treated as a treaty that lasts for at least 10 years.
+# 	fire_and_forget = no
+#
+# 	# Determines if the action will show up in the list in the trade deals view.
+# 	# SCOPE: Country "giving" the action
+# 	# FROM: Country "receiving" the action
+# 	potential = {
+# 		has_overlord = from
+# 		is_specialist_subject_type = { TYPE = bulwark }
+# 	}
+#
+# 	# If this trigger returns 'no', then the trade deal will be cancelled. Checked on daily tick. Only relevant if fire_and_forget is 'no'.
+# 	# SCOPE: Country "giving" the action
+# 	# FROM: Country "receiving" the action
+# 	active = {
+# 		has_overlord = from
+# 		is_specialist_subject_type = { TYPE = bulwark }
+# 	}
+#
+# 	# Effect that fires when the trade deal is accepted.
+# 	# SCOPE: Country "giving" the action
+# 	# FROM: Country "receiving" the action
+# 	on_traded_effect = {
+# 		from = {
+# 			set_galactic_custodian = yes
+# 		}
+# 	}
+#
+# 	# Effect that fires when the trade deal ends. Only relevant if fire_and_forget is 'no'.
+# 	# SCOPE: Country "giving" the action
+# 	# FROM: Country "receiving" the action. Not guaranteed to be valid, since a trade deal is cancelled if one of the countries dies.
+# 	on_deal_ended_sender_effect = {
+# 	}
+#
+# 	# Effect that fires when the trade deal ends. Only relevant if fire_and_forget is 'no'.
+# 	# SCOPE: Country "receiving" the action
+# 	# FROM: Country "giving" the action. Not guaranteed to be valid, since a trade deal is cancelled if one of the countries dies.
+# 	on_deal_ended_recipient_effect = {
+# 		set_galactic_custodian = no
+# 	}
+#
+# 	# Used to determine how much the AI will value the action in a trade deal.
+# 	ai_weight = {
+# 		weight = 1
+#
+# 		modifier = {
+# 			weight = 2
+# 			from = {
+# 				is_galactic_custodian = no
+# 			}
+# 		}
+# 	}
+# }
+
+trade_action_viridia_bene = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_viridia_bene
+				}
+				is_action_active = {
+					action = trade_action_argent_bene
+				}
+				has_modifier = viridia_blessing
+				has_modifier = viridia_bene
+				has_modifier = argent_blessing
+				has_modifier = argent_bene
+			}
+		}
+		has_modifier = viridia_blessing
+	}
+
+	active = {
+		has_modifier = viridia_blessing
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = viridia_bene
+			}
+			remove_modifier = argent_bene
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = viridia_bene
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_argent_bene = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_viridia_bene
+				}
+				is_action_active = {
+					action = trade_action_argent_bene
+				}
+				has_modifier = viridia_blessing
+				has_modifier = viridia_bene
+				has_modifier = argent_blessing
+				has_modifier = argent_bene
+			}
+		}
+		has_modifier = argent_blessing
+	}
+
+	active = {
+		has_modifier = argent_blessing
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = argent_bene
+			}
+			remove_modifier = viridia_bene
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = argent_bene
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_fog_guide = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_fog_guide
+				}
+				has_modifier = fogwalker
+				has_modifier = fog_guide
+			}
+		}
+		has_modifier = fogwalker
+	}
+
+	active = {
+		has_modifier = fogwalker
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = fog_guide
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = fog_guide
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_seeing_eye_empire = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_seeing_eye_empire
+				}
+				has_modifier = blindsight
+				has_modifier = seeing_eye_empire
+			}
+		}
+		has_modifier = blindsight
+	}
+
+	active = {
+		has_modifier = blindsight
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = seeing_eye_empire
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = seeing_eye_empire
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_delete_country = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			is_ai = yes
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			every_owned_pop = {
+				random_list = {
+					75 = { kill_pop = yes }
+					25 = { }
+				}
+			}
+			every_owned_planet = {
+				add_modifier = { modifier = toxic_terraforming_candidate }
+				change_pc = { class = pc_toxic inherit_entity = no }
+			}
+			destroy_country = yes
+		}
+		no_scope = {
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_viridia_bless = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOT = {
+				has_modifier = viridia_blessing
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = viridia_blessing
+			}
+			remove_modifier = viridia_bene
+			remove_modifier = argent_bene
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_argent_bless = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOT = {
+				has_modifier = argent_blessing
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = argent_blessing
+			}
+			remove_modifier = viridia_bene
+			remove_modifier = argent_bene
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_fogwalk = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOT = {
+				has_modifier = fogwalker
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = fogwalker
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_blindsight = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOT = {
+				has_modifier = blindsight
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = blindsight
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_reconstruction_authority = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOT = {
+				has_modifier = reconstruction_authority
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = reconstruction_authority days = 720
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
