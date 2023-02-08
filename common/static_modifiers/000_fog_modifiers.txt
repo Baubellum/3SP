@@ -55,3 +55,19 @@ favored = {
 	ship_shield_regen_add_perc = 1.0
 	planet_orbital_bombardment_damage = -0.5
 }
+
+superpower = {
+
+}
+
+rhindahkla = {
+
+}
+
+star_court = {
+
+}
+
+inspectorate = {
+
+}
