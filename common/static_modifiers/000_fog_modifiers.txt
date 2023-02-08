@@ -45,24 +45,60 @@ star_court = {
 }
 
 inspectorate = {
-	all_technology_research_speed = -0.2
-	country_produces_mult = -0.2
+	all_technology_research_speed = -0.3
+	country_produces_mult = -0.3
 	country_cost_mult = -0.3
 	country_upkeep_mult = -0.4
-	ship_corvette_cost_mult = -0.1
-	shipsize_corvette_hull_add = -350
-	shipsize_corvette_build_speed_mult = 2
+	ship_armor_hardening_add = -0.2  # Why my
+	ship_shield_hardening_add = -0.2 # ship-ship soft?
+	starbase_shipyard_build_speed_mult = 0.5
 }
 
 ### Rhindie tradables
 
-mil_oversight = {
+rhin_oversight = {
+
+}
+
+rhin_scrutiny = {
+
+}
+
+rhin_emergency = {
 
 }
 
 ### Courtier barterables
 
+court_angy = {
+	trade_value_mult = -0.2
+	planet_jobs_produces_mult = -0.2
+	planet_stability_add = -10
+}
 
+court_artsy = {
+	
+}
+
+court_very_artsy = {
+	
+}
+
+court_shooty = {
+	
+}
+
+court_very_shooty = {
+	
+}
+
+court_talky = {
+	
+}
+
+court_very_talky = {
+	
+}
 
 ### Inspector detectors
 
