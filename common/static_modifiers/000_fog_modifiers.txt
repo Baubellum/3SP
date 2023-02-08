@@ -28,49 +28,8 @@ reconstruction_authority = {
 	pop_demotion_time_mult = -1
 	pop_resettlement_cost_mult = -0.95
 	planet_clear_blocker_speed_mult = 10
-}
-
-industrial_diplomacy = {
-	monthly_trades_alloys_upkeep_mult = -0.3
-	monthly_trades_alloys_produces_mult = -0.3
-	planet_metallurgists_alloys_produces_add = 1
-	planet_metallurgists_minerals_upkeep_add = 2
-}
-
-factional_support = {
-	pop_factions_unity_produces_add = 0.5
-	pop_factions_energy_produces_add = 1
-}
-
-reviled_revelry = {
-	max_rivalries = 3
-	rivalries_unity_produces_add = 10
-	rivalries_energy_produces_add = 10
-	rivalries_alloys_produces_add = 5
-	rivalries_minerals_upkeep_add = 10
-}
-
-fog_dredge = {
-	stations_alloys_produces_add = 0.5
-	stations_energy_upkeep_add = 1
-}
-
-dwayr_tradition = {
-	army_health = 0.5
-	army_damage_mult = 0.5
-	habitability_floor_add = 0.3
-}
-
-fog_choked = {
-	habitability_ceil_add = -0.1
-	planet_stability_add = -5
-	country_produces_mult = -0.1
-	country_cost_mult = 0.1
-	country_upkeep_mult = 0.1
-	pop_growth_speed_reduction = 0.1
-	planet_pop_assembly_reduction = 0.1
-	all_technology_research_speed = -0.1
-	starbase_shipyard_build_speed_mult = -0.1
+	planet_crime_mult = -1
+	planet_crime_no_happiness_mult = -1
 }
 
 kamikaze_corvettes = {
@@ -81,46 +40,6 @@ kamikaze_corvettes = {
 	ship_corvette_cost_mult = -0.1
 	shipsize_corvette_hull_add = -350
 	shipsize_corvette_build_speed_mult = 2
-}
-
-stoic_defense = {
-	ship_home_territory_fire_rate_mult = 0.2
-	country_war_exhaustion_mult = -0.2
-	pop_defense_armies_add = 0.25
-	starbase_defensive_war_ship_build_speed_mult = 0.5
-}
-
-crossroads = {
-	trade_value_mult = 0.1
-	country_trade_fee = -0.1
-	pop_job_trade_mult = 0.2
-	pop_lifestyle_trade_mult = 0.5
-}
-
-galactic_emperor = {
-	veto_cost_mult = -0.8
-	veto_cooldown_mult = -0.75
-	emergency_measures_cooldown_mult = -0.8
-	damage_vs_country_type_swarm_mult = 0.2
-	damage_vs_country_type_extradimensional_mult = 0.2
-	damage_vs_country_type_extradimensional_2_mult = 0.2
-	damage_vs_country_type_extradimensional_3_mult = 0.2
-	damage_vs_country_type_ai_empire_mult = 0.2
-	damage_vs_country_type_gray_goo_mult = 0.2
-	damage_vs_player_crisis_mult = 0.2
-}
-
-galactic_custodian = {
-	veto_cost_mult = -0.8
-	veto_cooldown_mult = -0.75
-	emergency_measures_cooldown_mult = -0.8
-	damage_vs_country_type_swarm_mult = 0.2
-	damage_vs_country_type_extradimensional_mult = 0.2
-	damage_vs_country_type_extradimensional_2_mult = 0.2
-	damage_vs_country_type_extradimensional_3_mult = 0.2
-	damage_vs_country_type_ai_empire_mult = 0.2
-	damage_vs_country_type_gray_goo_mult = 0.2
-	damage_vs_player_crisis_mult = 0.2
 }
 
 favored = {
