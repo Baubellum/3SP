@@ -20,32 +20,6 @@ the_fog = {
 	ship_shield_regen_add_perc = -1.0
 }
 
-empire_base = {
-	max_rivalries = 3
-	country_occupation_armies_add = 3
-	local_trade_protection_add = 2
-	country_power_projection_influence_produces_add = 2
-	country_edict_fund_add = 10
-	COUNTRY_NAVAL_COVERAGE_MULT = 1
-	ship_friendly_territory_accuracy_add = 10
-	ship_friendly_territory_tracking_add = 10
-	intel_encryption_add = 2
-	country_base_physics_research_produces_add = 500
-	country_base_society_research_produces_add = 500
-	country_base_engineering_research_produces_add = 500
-	country_base_unity_produces_add = 200
-	subject_tax_upkeep_mult = -0.5
-	overlord_subsidy_upkeep_mult = -0.5
-	starbase_shipyard_build_speed_mult = 5
-	starbase_upgrade_speed_mult = 5
-	starbase_building_build_speed_mult = 5
-	starbase_module_build_speed_mult = 5
-	planet_army_build_speed_mult = 5
-	building_time_mult = -0.5
-	shipclass_military_station_build_speed_mult = 5
-	ship_orbital_bombardment_mult = 0.5
-}
-
 navy_coverage_shortage = {
 	country_power_projection_produces_mult = -1
 }
