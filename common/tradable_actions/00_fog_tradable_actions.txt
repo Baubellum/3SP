@@ -1016,3 +1016,181 @@ trade_action_court_very_bartery = {
 		weight = 10
 	}
 }
+
+
+### INSPECTORATE
+trade_action_GI_show_force = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_GI_show_force
+				}
+				has_modifier = GI_show_force
+			}
+		}
+		has_modifier = inspectorate
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = GI_show_force
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = GI_show_force
+			}
+			remove_modifier = GI_no_priv
+			remove_modifier = GI_sacrifice
+			remove_modifier = GI_militia
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = GI_show_force
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_GI_no_priv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_GI_no_priv
+				}
+				has_modifier = GI_no_priv
+			}
+		}
+		has_modifier = inspectorate
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = GI_no_priv
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = GI_no_priv
+			}
+			remove_modifier = GI_show_force
+			remove_modifier = GI_sacrifice
+			remove_modifier = GI_militia
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = GI_no_priv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_GI_sacrifice = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_GI_sacrifice
+				}
+				has_modifier = GI_sacrifice
+			}
+		}
+		has_modifier = inspectorate
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = GI_sacrifice
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = GI_sacrifice
+			}
+			remove_modifier = GI_show_force
+			remove_modifier = GI_no_priv
+			remove_modifier = GI_militia
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = GI_sacrifice
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_GI_militia = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_GI_militia
+				}
+				has_modifier = GI_militia
+			}
+		}
+		has_modifier = inspectorate
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = GGI_militia
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = GI_sacrifice
+			}
+			remove_modifier = GI_show_force
+			remove_modifier = GI_no_priv
+			remove_modifier = GI_sacrifice
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = GI_militia
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
