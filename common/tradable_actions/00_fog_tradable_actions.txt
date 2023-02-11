@@ -178,7 +178,7 @@ trade_action_rhin_scrutiny = {
 	}
 
 	active = {
-		has_modifier = rhin_scrutiny
+		FROM = { has_modifier = rhin_scrutiny }
 		is_overlord_to = FROM 
 	}
 
@@ -221,7 +221,7 @@ trade_action_rhin_emergency = {
 	}
 
 	active = {
-		has_modifier = rhin_emergency
+		FROM = { has_modifier = rhin_emergency }
 		is_overlord_to = FROM 
 	}
 
