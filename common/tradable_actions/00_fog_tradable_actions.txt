@@ -392,6 +392,7 @@ trade_action_reconstruction_authority = {
 	}
 }
 
+
 ### Rhin Trade
 trade_action_rhin_oversight = {
 	fire_and_forget = no
@@ -402,30 +403,25 @@ trade_action_rhin_oversight = {
 				is_action_active = {
 					action = trade_action_rhin_oversight
 				}
-				is_action_active = {
-					action = trade_action_rhin_scrutiny
-				}
-				is_action_active = {
-					action = trade_action_rhin_emergency
-				}
 				has_modifier = rhin_oversight
-				has_modifier = rhin_scrutiny
-				has_modifier = rhin_emergency
 			}
 		}
 		has_modifier = rhindahkla
+		is_overlord_to = FROM 
 	}
 
 	active = {
-		has_modifier = 
+		has_modifier = rhin_oversight
+		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
 		FROM = {
 			add_modifier = {
-				modifier = viridia_bene
+				modifier = rhin_oversight
 			}
-			remove_modifier = argent_bene
+			remove_modifier = rhin_scrutiny
+			remove_modifier = rhin_emergency
 		}
 	}
 
@@ -433,7 +429,587 @@ trade_action_rhin_oversight = {
 	}
 
 	on_deal_ended_recipient_effect = {
-		remove_modifier = viridia_bene
+		remove_modifier = rhin_oversight
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_rhin_scrutiny = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_rhin_scrutiny
+				}
+				has_modifier = rhin_scrutiny
+			}
+		}
+		has_modifier = rhindahkla
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = rhin_scrutiny
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = rhin_scrutiny
+			}
+			remove_modifier = rhin_oversight
+			remove_modifier = rhin_emergency
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = rhin_scrutiny
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_rhin_emergency = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_rhin_emergency
+				}
+				has_modifier = rhin_emergency
+			}
+		}
+		has_modifier = rhindahkla
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = rhin_emergency
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = rhin_emergency
+			}
+			remove_modifier = rhin_oversight
+			remove_modifier = rhin_scrutiny
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = rhin_emergency
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+### Court Trade
+trade_action_court_angy = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_angy
+				}
+				has_modifier = court_angy
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_angy
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_angy
+			}
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_angy
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_artsy = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_artsy
+				}
+				has_modifier = court_artsy
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_artsy
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_artsy
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_artsy
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_very_artsy = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_very_artsy
+				}
+				has_modifier = court_very_artsy
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_very_artsy
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_very_artsy
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_very_artsy
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_shooty = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_shooty
+				}
+				has_modifier = court_shooty
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_shooty
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_shooty
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_shooty
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+
+trade_action_court_shooty = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_shooty
+				}
+				has_modifier = court_shooty
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_shooty
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_shooty
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_shooty
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_very_shooty = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_very_shooty
+				}
+				has_modifier = court_very_shooty
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_very_shooty
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_very_shooty
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_very_shooty
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_talky = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_talky
+				}
+				has_modifier = court_talky
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_talky
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_talky
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_talky
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_very_talky = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_very_talky
+				}
+				has_modifier = court_very_talky
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_very_talky
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_very_talky
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_very_talky
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_bartery = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_court_bartery
+				}
+				has_modifier = court_bartery
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_bartery
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_bartery
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_bartery
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_very_bartery = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_very_court_bartery
+				}
+				has_modifier = court_very_bartery
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = court_very_bartery
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = court_very_bartery
+			}
+			remove_modifier = court_angy
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = court_very_bartery
 	}
 
 	ai_weight = {
