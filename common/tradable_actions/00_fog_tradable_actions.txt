@@ -298,6 +298,83 @@ trade_action_court_angy = {
 	}
 }
 
+trade_action_court_slightly_angy = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				has_modifier = court_angy
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			remove_modifier = court_artsy
+			remove_modifier = court_very_artsy
+			remove_modifier = court_shooty
+			remove_modifier = court_very_shooty
+			remove_modifier = court_talky
+			remove_modifier = court_very_talky
+			remove_modifier = court_bartery
+			remove_modifier = court_very_bartery
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_court_baubles = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			NOR = {
+				has_modifier = court_angy
+			}
+		}
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	active = {
+		has_modifier = star_court
+		is_overlord_to = FROM 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_resource = { minor_artifacts = 5 }
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
 trade_action_court_artsy = {
 	fire_and_forget = yes
 
@@ -425,57 +502,6 @@ trade_action_court_shooty = {
 			remove_modifier = court_angy
 			remove_modifier = court_artsy
 			remove_modifier = court_very_artsy
-			remove_modifier = court_very_shooty
-			remove_modifier = court_talky
-			remove_modifier = court_very_talky
-			remove_modifier = court_bartery
-			remove_modifier = court_very_bartery
-		}
-	}
-
-	on_deal_ended_sender_effect = {
-	}
-
-	on_deal_ended_recipient_effect = {
-		remove_modifier = court_shooty
-	}
-
-	ai_weight = {
-		weight = 10
-	}
-}
-
-
-trade_action_court_shooty = {
-	fire_and_forget = yes
-
-	potential = {
-		FROM = {
-			NOR = {
-				is_action_active = {
-					action = trade_action_court_shooty
-				}
-				has_modifier = court_shooty
-			}
-		}
-		has_modifier = star_court
-		is_overlord_to = FROM 
-	}
-
-	active = {
-		has_modifier = court_shooty
-		is_overlord_to = FROM 
-	}
-
-	on_traded_effect = {
-		FROM = {
-			add_modifier = {
-				modifier = court_shooty
-			}
-			remove_modifier = court_angy
-			remove_modifier = court_artsy
-			remove_modifier = court_very_artsy
-			remove_modifier = court_shooty
 			remove_modifier = court_very_shooty
 			remove_modifier = court_talky
 			remove_modifier = court_very_talky
