@@ -1,0 +1,151 @@
+add_fog_respite_effect = {
+	optimize_memory
+	fleet = {
+		every_controlled_ship = {
+			limit = {
+				is_ship_class = shipclass_starbase
+				NOT = { has_component = "STARBASE_AURA_FOG_RESPITE" }
+			}
+			starbase = {
+				add_starbase_component = {
+			        component = "STARBASE_AURA_FOG_RESPITE"
+			    }
+			}
+		}
+	}
+}
+
+stagehand_effect = {
+	optimize_memory
+	set_country_type = stagehand
+	every_owned_pop = { kill_pop = yes }
+	every_owned_fleet = { delete_fleet = { target = this destroy_template = no } }	
+	add_modifier = { modifier = stagehand }
+	give_tier_1_techs_effect = yes
+	give_tier_2_techs_effect = yes
+}
+
+fog_init_1_effect = {
+	optimize_memory
+	every_system = { 
+		random_list = { 
+			40 = {  } 
+			30 = {
+				create_nebula = {
+					radius = 40
+					effect = {
+						add_modifier = { modifier = the_fog }
+						fog_init_2_effect = yes
+						fog_nebulize_effect = yes
+					}
+				}
+			}
+			30 = {
+				create_nebula = {
+					radius = 40
+					effect = {
+						add_modifier = { modifier = the_fog }
+						fog_init_3_effect = yes
+						fog_nebulize_effect = yes
+					}
+				}
+			}
+		}
+	}
+}
+
+fog_init_2_effect = {
+	optimize_memory
+	solar_system = {
+		if = {
+			limit = {
+				NOR = {
+					starting_system = yes
+					is_star_class = sc_binary_1
+					is_star_class = sc_binary_2
+					is_star_class = sc_binary_3
+					is_star_class = sc_binary_4
+					is_star_class = sc_binary_5
+					is_star_class = sc_binary_6
+					is_star_class = sc_binary_7
+					is_star_class = sc_binary_8
+					is_star_class = sc_binary_9
+					is_star_class = sc_binary_10
+					is_star_class = sc_trinary_1
+					is_star_class = sc_trinary_2
+					is_star_class = sc_trinary_3
+					is_star_class = sc_trinary_4
+					is_star_class = sc_black_hole
+				}
+			}
+			random_list = {
+				99 = { set_star_class = sc_toxoid_star }
+				1 = { set_star_class = sc_black_hole }
+			}
+		}
+	}
+}
+
+fog_init_3_effect = {
+	optimize_memory
+	solar_system = {
+		if = {
+			limit = {
+				NOR = {
+					starting_system = yes
+					is_star_class = sc_binary_1
+					is_star_class = sc_binary_2
+					is_star_class = sc_binary_3
+					is_star_class = sc_binary_4
+					is_star_class = sc_binary_5
+					is_star_class = sc_binary_6
+					is_star_class = sc_binary_7
+					is_star_class = sc_binary_8
+					is_star_class = sc_binary_9
+					is_star_class = sc_binary_10
+					is_star_class = sc_trinary_1
+					is_star_class = sc_trinary_2
+					is_star_class = sc_trinary_3
+					is_star_class = sc_trinary_4
+					is_star_class = sc_black_hole
+				}
+			}
+			random_list = {
+				99 = { set_star_class = sc_pulsar }
+				1 = { set_star_class = sc_black_hole }
+			}
+		}
+	}
+}
+
+fog_nebulize_effect = {
+	optimize_memory
+	star = {
+		random_list = {
+			10 = { create_ambient_object = { type = nebula_1 } }
+			10 = { create_ambient_object = { type = nebula_2 } }
+			10 = { create_ambient_object = { type = nebula_3 } }
+			10 = { create_ambient_object = { type = nebula_4 } }
+			10 = { create_ambient_object = { type = rare_nebula_1 } }
+			10 = { create_ambient_object = { type = rare_nebula_2 } }
+			10 = { create_ambient_object = { type = turbulent_nebula_1 } }
+			10 = { create_ambient_object = { type = turbulent_nebula_2 } }
+		}
+	}
+}
+
+fog_dense_effect = {
+	optimize_memory
+	solar_system = {
+		set_star_flag = volatile_star
+		add_modifier = { modifier = devouring_nebula }
+		every_neighbor_system = {
+			limit = {
+				NOT = { starting_system = yes }
+				has_modifier = the_fog
+			}
+			set_star_flag = volatile_star
+			add_modifier = { modifier = gnawing_nebula }
+		}
+	}
+}

@@ -46,6 +46,8 @@
  GI_sacrifice_desc:0 ""
  GI_militia:0 "People's Militia"
  GI_militia_desc:0 ""
+ GI_persuade:0 "Forceful Persuasion"
+ GI_persuade_desc:0 ""
  
  
  trade_action_rhin_oversight:0 "Rhindahklan Oversight"
@@ -54,6 +56,8 @@
  trade_action_rhin_scrutiny_desc:0 ""
  trade_action_rhin_emergency:0 "Declare State of Emergency"
  trade_action_rhin_emergency_desc:0 ""
+ trade_action_rhin_back2normal:0 "Cessation of Interventions"
+ trade_action_rhin_back2normal_desc:0 "Any state of emergency, inspections, or oversight is terminated effective immediately."
 
  trade_action_court_baubles:0 "Emperor's Gift"
  trade_action_court_baubles_desc:0 ""
@@ -88,3 +92,7 @@
  trade_action_GI_sacrifice_desc:0 ""
  trade_action_GI_militia:0 "People's Militia"
  trade_action_GI_militia_desc:0 ""
+ trade_action_GI_persuasion:0 "Forceful Persuasion"
+ trade_action_GI_persuasion_desc:0 ""
+ trade_action_GI_back2normal:0 "End Interference"
+ trade_action_GI_back2normal_desc:0 "Effective immediately, the Inspectorate will cease any national interferences such as the abolition of privileges or organization of people's militias."

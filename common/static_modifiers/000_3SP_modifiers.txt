@@ -23,6 +23,8 @@ reconstruction_authority = {
 
 superpower = {
 	ascension_perks_add = 1
+	country_naval_capacity_contribution_from_subjects_mult = 0.2
+	overlord_subsidy_upkeep_mult = -0.2
 }
 
 rhindahkla = {
@@ -95,16 +97,16 @@ court_artsy = {
 
 court_very_artsy = {
 	country_unity_produces_mult = 0.2
-	monthly_loyalty = 0.5
+	monthly_loyalty = 1
 }
 
 court_shooty = {
-	ship_fire_rate_mult = 0.05
+	ship_weapon_damage = 0.1
 }
 
 court_very_shooty = {
-	ship_fire_rate_mult = 0.1
-	monthly_loyalty = 0.5
+	ship_weapon_damage = 0.2
+	monthly_loyalty = 1
 }
 
 court_talky = {
@@ -113,7 +115,7 @@ court_talky = {
 
 court_very_talky = {
 	envoys_add = 2
-	monthly_loyalty = 0.5
+	monthly_loyalty = 1
 }
 
 court_bartery = {
@@ -122,7 +124,7 @@ court_bartery = {
 
 court_very_bartery = {
 	trade_value_mult = 0.2
-	monthly_loyalty = 0.5
+	monthly_loyalty = 1
 }
 
 ### Inspector detectors
@@ -156,4 +158,12 @@ GI_militia = {
 	army_damage_mult = 0.1
 	pop_job_amenities_mult = -0.1
 	planet_stability_add = 10
+}
+
+GI_persuade = {
+	monthly_loyalty = 2
+	country_produces_mult = 0.3
+	pop_job_amenities_mult = -0.2
+	ship_weapon_damage = -0.2
+	ship_fire_rate_mult = -0.1
 }

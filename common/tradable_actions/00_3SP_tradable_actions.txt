@@ -11,7 +11,7 @@
 # 	# SCOPE: Country "giving" the action
 # 	# FROM: Country "receiving" the action
 # 	potential = {
-# 		has_overlord = from
+# 		FROM = { has_overlord = ROOT }
 # 		is_specialist_subject_type = { TYPE = bulwark }
 # 	}
 #
@@ -19,7 +19,7 @@
 # 	# SCOPE: Country "giving" the action
 # 	# FROM: Country "receiving" the action
 # 	active = {
-# 		has_overlord = from
+# 		FROM = { has_overlord = ROOT }
 # 		is_specialist_subject_type = { TYPE = bulwark }
 # 	}
 #
@@ -70,12 +70,7 @@ trade_action_delete_country = {
 
 	on_traded_effect = {
 		FROM = {
-			every_owned_pop = {
-				random_list = {
-					75 = { kill_pop = yes }
-					25 = { }
-				}
-			}
+			every_owned_pop = { kill_pop = yes }
 			every_owned_planet = {
 				add_modifier = { modifier = toxic_terraforming_candidate }
 				change_pc = { class = pc_toxic inherit_entity = no }
@@ -131,12 +126,12 @@ trade_action_rhin_oversight = {
 			}
 		}
 		has_modifier = rhindahkla
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = rhin_oversight
-		is_overlord_to = FROM 
+		FROM = { has_modifier = rhin_oversight }
+		FROM = { has_overlord = ROOT }
 	}
 
 	on_traded_effect = {
@@ -174,12 +169,12 @@ trade_action_rhin_scrutiny = {
 			}
 		}
 		has_modifier = rhindahkla
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
 		FROM = { has_modifier = rhin_scrutiny }
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -217,12 +212,12 @@ trade_action_rhin_emergency = {
 			}
 		}
 		has_modifier = rhindahkla
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
 		FROM = { has_modifier = rhin_emergency }
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -247,6 +242,51 @@ trade_action_rhin_emergency = {
 	}
 }
 
+trade_action_rhin_back2normal = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			OR = {
+				is_action_active = {
+					action = trade_action_rhin_emergency
+				}
+				has_modifier = rhin_emergency
+				is_action_active = {
+					action = trade_action_rhin_oversight
+				}
+				has_modifier = rhin_oversight
+				is_action_active = {
+					action = trade_action_rhin_scrutiny
+				}
+				has_modifier = rhin_scrutiny
+			}
+		}
+		has_modifier = rhindahkla
+		FROM = { has_overlord = ROOT } 
+	}
+
+	active = {
+	}
+
+	on_traded_effect = {
+		FROM = {
+			remove_modifier = rhin_emergency
+			remove_modifier = rhin_oversight
+			remove_modifier = rhin_scrutiny
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
 
 ### Court Trade
 trade_action_court_angy = {
@@ -262,12 +302,12 @@ trade_action_court_angy = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_angy
-		is_overlord_to = FROM 
+		FROM = { has_modifier = court_angy }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -308,12 +348,10 @@ trade_action_court_slightly_angy = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = star_court
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -326,6 +364,7 @@ trade_action_court_slightly_angy = {
 			remove_modifier = court_very_talky
 			remove_modifier = court_bartery
 			remove_modifier = court_very_bartery
+			
 		}
 	}
 
@@ -350,12 +389,10 @@ trade_action_court_baubles = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = star_court
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -388,12 +425,12 @@ trade_action_court_artsy = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_artsy
-		is_overlord_to = FROM 
+		FROM = { has_modifier = court_artsy }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -429,6 +466,7 @@ trade_action_court_very_artsy = {
 
 	potential = {
 		FROM = {
+			has_modifier = court_artsy
 			NOR = {
 				is_action_active = {
 					action = trade_action_court_very_artsy
@@ -437,12 +475,10 @@ trade_action_court_very_artsy = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_very_artsy
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -486,12 +522,10 @@ trade_action_court_shooty = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_shooty
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -527,6 +561,7 @@ trade_action_court_very_shooty = {
 
 	potential = {
 		FROM = {
+			has_modifier = court_shooty
 			NOR = {
 				is_action_active = {
 					action = trade_action_court_very_shooty
@@ -535,12 +570,10 @@ trade_action_court_very_shooty = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_very_shooty
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -584,12 +617,10 @@ trade_action_court_talky = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_talky
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -625,6 +656,7 @@ trade_action_court_very_talky = {
 
 	potential = {
 		FROM = {
+			has_modifier = court_talky
 			NOR = {
 				is_action_active = {
 					action = trade_action_court_very_talky
@@ -633,12 +665,10 @@ trade_action_court_very_talky = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_very_talky
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -682,12 +712,10 @@ trade_action_court_bartery = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_bartery
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -723,6 +751,7 @@ trade_action_court_very_bartery = {
 
 	potential = {
 		FROM = {
+			has_modifier = court_bartery
 			NOR = {
 				is_action_active = {
 					action = trade_action_very_court_bartery
@@ -731,12 +760,10 @@ trade_action_court_very_bartery = {
 			}
 		}
 		has_modifier = star_court
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = court_very_bartery
-		is_overlord_to = FROM 
 	}
 
 	on_traded_effect = {
@@ -782,12 +809,12 @@ trade_action_GI_show_force = {
 			}
 		}
 		has_modifier = inspectorate
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = GI_show_force
-		is_overlord_to = FROM 
+		FROM = { has_modifier = GI_show_force }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -798,6 +825,7 @@ trade_action_GI_show_force = {
 			remove_modifier = GI_no_priv
 			remove_modifier = GI_sacrifice
 			remove_modifier = GI_militia
+			remove_modifier = GI_persuade
 		}
 	}
 
@@ -826,12 +854,12 @@ trade_action_GI_no_priv = {
 			}
 		}
 		has_modifier = inspectorate
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = GI_no_priv
-		is_overlord_to = FROM 
+		FROM = { has_modifier = GI_no_priv }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -842,6 +870,7 @@ trade_action_GI_no_priv = {
 			remove_modifier = GI_show_force
 			remove_modifier = GI_sacrifice
 			remove_modifier = GI_militia
+			remove_modifier = GI_persuade
 		}
 	}
 
@@ -870,12 +899,12 @@ trade_action_GI_sacrifice = {
 			}
 		}
 		has_modifier = inspectorate
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = GI_sacrifice
-		is_overlord_to = FROM 
+		FROM = { has_modifier = GI_sacrifice }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
@@ -886,6 +915,7 @@ trade_action_GI_sacrifice = {
 			remove_modifier = GI_show_force
 			remove_modifier = GI_no_priv
 			remove_modifier = GI_militia
+			remove_modifier = GI_persuade
 		}
 	}
 
@@ -914,22 +944,23 @@ trade_action_GI_militia = {
 			}
 		}
 		has_modifier = inspectorate
-		is_overlord_to = FROM 
+		FROM = { has_overlord = ROOT } 
 	}
 
 	active = {
-		has_modifier = GGI_militia
-		is_overlord_to = FROM 
+		FROM = { has_modifier = GI_militia }
+		FROM = { has_overlord = ROOT } 
 	}
 
 	on_traded_effect = {
 		FROM = {
 			add_modifier = {
-				modifier = GI_sacrifice
+				modifier = GI_militia
 			}
 			remove_modifier = GI_show_force
 			remove_modifier = GI_no_priv
 			remove_modifier = GI_sacrifice
+			remove_modifier = GI_persuade
 		}
 	}
 
@@ -938,6 +969,107 @@ trade_action_GI_militia = {
 
 	on_deal_ended_recipient_effect = {
 		remove_modifier = GI_militia
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_GI_persuade = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_GI_persuade
+				}
+				has_modifier = GI_persuade
+			}
+		}
+		has_modifier = inspectorate
+		FROM = { has_overlord = ROOT } 
+	}
+
+	active = {
+		FROM = { has_modifier = GI_persuade }
+		FROM = { has_overlord = ROOT } 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = GI_persuade
+			}
+			remove_modifier = GI_show_force
+			remove_modifier = GI_no_priv
+			remove_modifier = GI_sacrifice
+			remove_modifier = GI_militia
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = GI_persuade
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_GI_back2normal = {
+	fire_and_forget = yes
+
+	potential = {
+		FROM = {
+			OR = {
+				is_action_active = {
+					action = trade_action_GI_show_force
+				}
+				has_modifier = GI_show_force
+				is_action_active = {
+					action = trade_action_GI_no_priv
+				}
+				has_modifier = GI_no_priv
+				is_action_active = {
+					action = trade_action_GI_sacrifice
+				}
+				has_modifier = GI_sacrifice
+				is_action_active = {
+					action = trade_action_GI_militia
+				}
+				has_modifier = GI_militia
+				is_action_active = {
+					action = trade_action_GI_persuade
+				}
+				has_modifier = GI_persuade
+			}
+		}
+		has_modifier = inspectorate
+		FROM = { has_overlord = ROOT } 
+	}
+
+	active = {
+	}
+
+	on_traded_effect = {
+		FROM = {
+			remove_modifier = GI_show_force
+			remove_modifier = GI_no_priv
+			remove_modifier = GI_sacrifice
+			remove_modifier = GI_militia
+			remove_modifier = GI_persuade
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
 	}
 
 	ai_weight = {
