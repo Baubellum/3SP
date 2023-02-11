@@ -391,3 +391,52 @@ trade_action_reconstruction_authority = {
 		weight = 10
 	}
 }
+
+### Rhin Trade
+trade_action_rhin_oversight = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_rhin_oversight
+				}
+				is_action_active = {
+					action = trade_action_rhin_scrutiny
+				}
+				is_action_active = {
+					action = trade_action_rhin_emergency
+				}
+				has_modifier = rhin_oversight
+				has_modifier = rhin_scrutiny
+				has_modifier = rhin_emergency
+			}
+		}
+		has_modifier = rhindahkla
+	}
+
+	active = {
+		has_modifier = 
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = viridia_bene
+			}
+			remove_modifier = argent_bene
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = viridia_bene
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
