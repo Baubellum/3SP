@@ -1,0 +1,169 @@
+navy_coverage_shortage = {
+	country_power_projection_produces_mult = -1
+}
+
+stagehand = {
+	monthly_trades_upkeep_mult = -1
+	add_base_country_intel = 100
+	country_resource_max_add = 500000
+	country_produces_mult = 4
+	country_upkeep_mult = -1
+	country_naval_cap_add = 5000
+}
+
+reconstruction_authority = {
+	building_time_mult = -0.95
+	planet_building_refund_mult = 1
+	pop_demotion_time_mult = -1
+	pop_resettlement_cost_mult = -0.95
+	planet_clear_blocker_speed_mult = 10
+	planet_crime_mult = -1
+	planet_crime_no_happiness_mult = -1
+}
+
+superpower = {
+	ascension_perks_add = 1
+	country_naval_capacity_contribution_from_subjects_mult = 0.2
+	overlord_subsidy_upkeep_mult = -0.2
+}
+
+rhindahkla = {
+	country_subject_trust_cap_add = 200
+	country_subject_power_penalty_mult = -0.3
+	empire_size_pops_mult = -0.2
+	pop_government_ethic_attraction = 0.5
+	ROBOT_pop_happiness = -1 	## Why do you abuse us so, father?
+	pop_cat_robot_servant_political_power = -0.75
+	job_roboticist_add = 1
+	espionage_hostile_operation_difficulty_add = 2
+	intel_decryption_add = -2
+}
+
+star_court = {
+	envoys_add = 2
+	country_base_minor_artifacts_produces_add = 0.05
+	country_base_influence_produces_add = 1
+	intel_decryption_add = 2
+	planet_administrators_produces_mult = -0.2
+}
+
+inspectorate = {
+	all_technology_research_speed = -0.2
+	country_produces_mult = -0.2
+	country_cost_mult = -0.35
+	country_upkeep_mult = -0.5
+	ship_armor_hardening_add = -0.2  # Why my
+	ship_shield_hardening_add = -0.2 # ship-ship soft?
+	starbase_shipyard_build_speed_mult = 1
+}
+
+### Rhindie tradables
+
+rhin_oversight = {
+	planet_stability_add = 10
+	planet_administrators_upkeep_mult = -0.3
+	pop_job_amenities_mult = -0.1
+	ship_weapon_damage = -0.2
+	army_damage_mult = -0.2
+}
+
+rhin_scrutiny = {
+	intel_encryption_add = -2
+	planet_administrators_upkeep_mult = 0.3
+	pop_citizen_happiness = -0.1
+}
+
+rhin_emergency = {
+	planet_crime_mult = -0.4
+	planet_crime_no_happiness_mult = -0.4
+	planet_jobs_produces_mult = 0.3
+	ship_weapon_damage = 0.2
+	army_damage_mult = 0.2
+	job_soldier_stability_add = 5
+	pop_job_amenities_mult = -0.3
+}
+
+### Courtier barterables
+
+court_angy = {
+	trade_value_mult = -0.2
+	planet_jobs_produces_mult = -0.2
+	planet_stability_add = -10
+}
+
+court_artsy = {
+	country_unity_produces_mult = 0.1
+}
+
+court_very_artsy = {
+	country_unity_produces_mult = 0.2
+	monthly_loyalty = 1
+}
+
+court_shooty = {
+	ship_weapon_damage = 0.1
+}
+
+court_very_shooty = {
+	ship_weapon_damage = 0.2
+	monthly_loyalty = 1
+}
+
+court_talky = {
+	envoys_add = 1
+}
+
+court_very_talky = {
+	envoys_add = 2
+	monthly_loyalty = 1
+}
+
+court_bartery = {
+	trade_value_mult = 0.1
+}
+
+court_very_bartery = {
+	trade_value_mult = 0.2
+	monthly_loyalty = 1
+}
+
+### Inspector detectors
+
+GI_show_force = {
+	starbase_shipyard_build_speed_mult = 2
+	starbase_shipyard_build_cost_mult = -0.1
+	ships_alloys_upkeep_mult = -0.6
+	country_alloys_produces_mult = -0.9
+}
+
+GI_no_priv = {
+	planet_metallurgists_alloys_produces_add = 1
+	planet_metallurgists_minerals_upkeep_add = 2
+	planet_miners_minerals_produces_add = 2
+	pop_job_amenities_mult = -0.2
+}
+
+GI_sacrifice = {
+	ship_weapon_damage = 0.2
+	ship_fire_rate_mult = 0.1
+	ship_speed_mult = 0.15
+	country_produces_mult = -0.3
+}
+
+GI_militia = {
+	pop_defense_armies_add = 1
+	country_occupation_armies_add = 3
+	army_morale = -0.1
+	army_health = 0.1
+	army_damage_mult = 0.1
+	pop_job_amenities_mult = -0.1
+	planet_stability_add = 10
+}
+
+GI_persuade = {
+	monthly_loyalty = 2
+	country_produces_mult = 0.3
+	pop_job_amenities_mult = -0.2
+	ship_weapon_damage = -0.2
+	ship_fire_rate_mult = -0.1
+}

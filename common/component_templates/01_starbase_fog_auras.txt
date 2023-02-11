@@ -1,0 +1,31 @@
+utility_component_template = {
+	key = "STARBASE_AURA_FOG_RESPITE"
+	size = medium
+	icon = "GFX_bulwark_array"
+	icon_frame = 1
+	power = 0
+
+	class_restriction = { shipclass_starbase }
+
+	friendly_aura = {
+		name = "aura_starbase_fog_respite"
+		system_wide = yes
+
+		stack_info = {
+			id = fog_respite_aura
+			priority = 10
+		}
+
+		modifier = {
+			ship_hull_regen_add_static = 0.55
+			ship_hull_regen_add_perc = 0.055
+		}
+
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+}
