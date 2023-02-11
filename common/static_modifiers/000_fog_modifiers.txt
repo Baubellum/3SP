@@ -22,22 +22,34 @@ reconstruction_authority = {
 }
 
 superpower = {
-	
+	ascension_perks_add = 1
 }
 
 rhindahkla = {
-	
+	country_subject_trust_cap_add = 200
+	country_subject_power_penalty_mult = -0.3
+	empire_size_pops_mult = -0.2
+	pop_government_ethic_attraction = 0.5
+	ROBOT_pop_happiness = -1 	## Why do you abuse us so, father?
+	pop_cat_robot_servant_political_power = -0.75
+	job_roboticist_add = 1
+	espionage_hostile_operation_difficulty_add = 2
+	intel_decryption_add = -2
 }
 
 star_court = {
-	
+	envoys_add = 2
+	country_base_minor_artifacts_produces_add = 0.05
+	country_base_influence_produces_add = 1
+	intel_decryption_add = 2
+	planet_administrators_produces_mult = -0.2
 }
 
 inspectorate = {
-	all_technology_research_speed = -0.3
-	country_produces_mult = -0.3
-	country_cost_mult = -0.3
-	country_upkeep_mult = -0.4
+	all_technology_research_speed = -0.2
+	country_produces_mult = -0.2
+	country_cost_mult = -0.35
+	country_upkeep_mult = -0.5
 	ship_armor_hardening_add = -0.2  # Why my
 	ship_shield_hardening_add = -0.2 # ship-ship soft?
 	starbase_shipyard_build_speed_mult = 1
