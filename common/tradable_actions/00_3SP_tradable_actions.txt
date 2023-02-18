@@ -1078,7 +1078,7 @@ trade_action_GI_back2normal = {
 }
 
 ## Revolutions
-
+#Auth
 trade_action_revol_auth_simp = {
 	fire_and_forget = no
 
@@ -1107,6 +1107,992 @@ trade_action_revol_auth_simp = {
 
 	on_deal_ended_recipient_effect = {
 		remove_modifier = revol_auth_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_auth_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_auth_simp
+					action = trade_action_revol_auth_adv
+				}
+				has_modifier = revol_auth_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_auth_adv
+			}
+			remove_modifier = revol_auth_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_auth_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#egal
+trade_action_revol_egal_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_egal_simp
+				}
+				has_modifier = revol_egal_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_egal_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_egal_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_egal_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_egal_simp
+					action = trade_action_revol_egal_adv
+				}
+				has_modifier = revol_egal_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_egal_adv
+			}
+			remove_modifier = revol_egal_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_egal_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#xenopho
+trade_action_revol_xenopho_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_xenopho_simp
+				}
+				has_modifier = revol_xenopho_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_xenopho_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_xenopho_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_xenopho_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_xenopho_simp
+					action = trade_action_revol_xenopho_adv
+				}
+				has_modifier = revol_xenopho_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_xenopho_adv
+			}
+			remove_modifier = revol_xenopho_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_xenopho_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#xenophi
+trade_action_revol_xenophi_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_xenophi_simp
+				}
+				has_modifier = revol_xenophi_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_xenophi_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_xenophi_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_xenophi_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_xenophi_simp
+					action = trade_action_revol_xenophi_adv
+				}
+				has_modifier = revol_xenophi_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_xenophi_adv
+			}
+			remove_modifier = revol_xenophi_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_xenophi_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#mili
+trade_action_revol_mili_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_mili_simp
+				}
+				has_modifier = revol_mili_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_mili_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_mili_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_mili_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_mili_simp
+					action = trade_action_revol_mili_adv
+				}
+				has_modifier = revol_mili_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_mili_adv
+			}
+			remove_modifier = revol_mili_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_mili_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#paci
+trade_action_revol_paci_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_paci_simp
+				}
+				has_modifier = revol_paci_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_paci_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_paci_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_paci_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_paci_simp
+					action = trade_action_revol_paci_adv
+				}
+				has_modifier = revol_paci_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_paci_adv
+			}
+			remove_modifier = revol_paci_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_paci_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#spir
+trade_action_revol_spir_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_spir_simp
+				}
+				has_modifier = revol_spir_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_spir_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_spir_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_spir_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_spir_simp
+					action = trade_action_revol_spir_adv
+				}
+				has_modifier = revol_spir_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_spir_adv
+			}
+			remove_modifier = revol_spir_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_spir_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#mate
+trade_action_revol_mate_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_mate_simp
+				}
+				has_modifier = revol_mate_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_mate_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_mate_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_mate_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_mate_simp
+					action = trade_action_revol_mate_adv
+				}
+				has_modifier = revol_mate_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_mate_adv
+			}
+			remove_modifier = revol_mate_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_mate_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#soci
+trade_action_revol_soci_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_soci_simp
+				}
+				has_modifier = revol_soci_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_soci_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_soci_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_soci_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_soci_simp
+					action = trade_action_revol_soci_adv
+				}
+				has_modifier = revol_soci_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_soci_adv
+			}
+			remove_modifier = revol_soci_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_soci_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#capi
+trade_action_revol_capi_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_capi_simp
+				}
+				has_modifier = revol_capi_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_capi_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_capi_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_capi_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_capi_simp
+					action = trade_action_revol_capi_adv
+				}
+				has_modifier = revol_capi_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_capi_adv
+			}
+			remove_modifier = revol_capi_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_capi_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#ecol
+trade_action_revol_ecol_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_ecol_simp
+				}
+				has_modifier = revol_ecol_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_ecol_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_ecol_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_ecol_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_ecol_simp
+					action = trade_action_revol_ecol_adv
+				}
+				has_modifier = revol_ecol_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_ecol_adv
+			}
+			remove_modifier = revol_ecol_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_ecol_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#indu
+trade_action_revol_indu_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_indu_simp
+				}
+				has_modifier = revol_indu_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_indu_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_indu_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_indu_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_indu_simp
+					action = trade_action_revol_indu_adv
+				}
+				has_modifier = revol_indu_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_indu_adv
+			}
+			remove_modifier = revol_indu_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_indu_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#elit
+trade_action_revol_plur_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_plur_simp
+				}
+				has_modifier = revol_plur_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_plur_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_plur_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_plur_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_plur_simp
+					action = trade_action_revol_plur_adv
+				}
+				has_modifier = revol_elit_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_elit_adv
+			}
+			remove_modifier = revol_elit_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_elit_adv
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+#elit
+trade_action_revol_elit_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_elit_simp
+				}
+				has_modifier = revol_elit_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_elit_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_elit_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
+
+trade_action_revol_elit_adv = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_elit_simp
+					action = trade_action_revol_elit_adv
+				}
+				has_modifier = revol_elit_adv
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_elit_adv
+			}
+			remove_modifier = revol_elit_simp
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_elit_adv
 	}
 
 	ai_weight = {
