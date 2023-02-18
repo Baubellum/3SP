@@ -1076,3 +1076,40 @@ trade_action_GI_back2normal = {
 		weight = 10
 	}
 }
+
+## Revolutions
+
+trade_action_revol_auth_simp = {
+	fire_and_forget = no
+
+	potential = {
+		FROM = {
+			NOR = {
+				is_action_active = {
+					action = trade_action_revol_auth_simp
+				}
+				has_modifier = revol_auth_simp
+			}
+		}
+		is_country_type = stagehand
+	}
+
+	on_traded_effect = {
+		FROM = {
+			add_modifier = {
+				modifier = revol_auth_simp
+			}
+		}
+	}
+
+	on_deal_ended_sender_effect = {
+	}
+
+	on_deal_ended_recipient_effect = {
+		remove_modifier = revol_auth_simp
+	}
+
+	ai_weight = {
+		weight = 10
+	}
+}
