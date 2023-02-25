@@ -1,13 +1,18 @@
 country = {
-	hidden = yes
-	use_for_ai_budget = yes
-	generate_mult_modifiers = {
-		produces
-		upkeep
-		cost
-	}
-	#modifier category: economic_unit is fine
+    hidden = yes
+    use_for_ai_budget = yes
+    generate_mult_modifiers = {
+        produces
+        upkeep
+        cost
+    }
+
+    generate_add_modifiers = {
+        produces
+    }
+    #modifier category: economic_unit is fine
 }
+
 
 monthly_trades = {
 	generate_add_modifiers = {
