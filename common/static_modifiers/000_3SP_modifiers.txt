@@ -294,3 +294,22 @@ revol_plur_adv = {
 	pop_ethic_pluralist_attraction_mult = 0.3
 	pop_ethic_fanatic_pluralist_attraction_mult = 0.1
 }
+
+3sp_recession = {
+    hide_from_country_list = yes
+    all_technology_research_speed = -0.2
+    country_produces_mult = -0.2
+    country_cost_mult = 0.1
+    country_upkeep_mult = 0.3
+}
+
+3sp_boom = {
+    hide_from_country_list = yes
+    all_technology_research_speed = 0.05
+    country_produces_mult = 0.1
+    country_cost_mult = -0.05
+    country_upkeep_mult = -0.05
+    country_base_physics_research_produces_add = 30
+    country_base_society_research_produces_add = 30
+    country_base_engineering_research_produces_add = 30
+}
